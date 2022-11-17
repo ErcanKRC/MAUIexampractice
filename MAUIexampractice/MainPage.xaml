@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIexampractice.MainPage">
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <ListView x:Name="Laptop_List_View"
+                      HasUnevenRows="True"
+                      ItemTapped="Laptop_List_View_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnDefinitions="*,*,*">
+                                <Image Source="{Binding IMG}"
+                                       WidthRequest="100"
+                                       HeightRequest="100"
+                                       Grid.Column="0"/>
+                                <Label Text="{Binding Name}"
+                                       Grid.Column="1"/>
+                                <Label Text="{Binding Price , StringFormat='{0:C}'}"
+                                       Grid.Column="2"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <ListView x:Name="Mouse_List_View"
+                      HasUnevenRows="True"
+                      ItemTapped="Mouse_List_View_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnDefinitions="*,*,*">
+                                <Image Source="{Binding IMG}"
+                                       WidthRequest="100"
+                                       HeightRequest="100"
+                                       Grid.Column="0"/>
+                                <Label Text="{Binding Name}"
+                                       Grid.Column="1"/>
+                                <Label Text="{Binding Price , StringFormat='{0:C}'}"
+                                       Grid.Column="2"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
+
+            <Button x:Name="ChartButton"
+                    Text="Add to Chart"
+                    Clicked="ChartButton_Clicked"/>
+
+            <ListView x:Name="Purchase_List_View"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnDefinitions="*,*,*">
+                                <Image Source="{Binding IMG}"
+                                       WidthRequest="100"
+                                       HeightRequest="100"
+                                       Grid.Column="0"/>
+                                <Label Text="{Binding Name}"
+                                       Grid.Column="1"/>
+                                <Label Text="{Binding Price , StringFormat='{0:C}'}"
+                                       Grid.Column="2"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
